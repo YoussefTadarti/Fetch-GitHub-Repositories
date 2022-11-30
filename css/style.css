@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+/*-----------General style-----------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  background-color: var(--very-dark-blue-300);
+}
+:root {
+  --blue: hsl(212deg 100% 50%);
+  --light-blue: hsl(217deg 20% 51%);
+  --dark-blue-100: hsl(217deg 35% 45%);
+  --dark-blue-200: hsl(222deg 41% 20%);
+  --very-dark-blue-100: hsl(217deg 21% 21%);
+  --very-dark-blue-200: hsl(220deg 18% 16%);
+  --very-dark-blue-300: hsl(220deg 40% 13%);
+  --very-light-blue: hsl(227deg 100% 98%);
+  --white: hsl(0deg 0% 100%);
+  --primary-transition: 250ms ease-in-out;
+  --container-max-width: clamp(21.88rem, calc(6.39rem + 66.09vw), 45.63rem);
+  --body-padding: clamp(1.5rem, calc(0.03rem + 6.26vw), 3.75rem);
+  --landmark-font-size: clamp(0.81rem, calc(0.6rem + 0.89vw), 0.94rem);
+  --header-logo-color: var(--very-dark-blue-200);
+  --link-color: var(--dark-blue-100);
+  --body-background-color: var(--very-light-blue);
+  --body-font-color: var(--dark-blue-100);
+  --result-background-color: var(--white);
+  --result-name-color: var(--very-dark-blue-100);
+  --result-statistic-background-color: var(--very-light-blue);
+  --result-number-color: var(--very-dark-blue-100);
+  --theme-switcher-text-hover-color: var(--very-dark-blue-200);
+  --search-form-input-background-color: var(--white);
+  --search-form-input-color: var(--very-dark-blue-200);
+  --focus-visible-outline-color: var(--very-dark-blue-300);
+  --primary-box-shadow: 0 1rem 1.875rem -0.625rem rgb(70 96 187 / 20%);
+}
+
+.container {
+  max-width: 47.625rem;
+  padding: 1.213rem;
+  margin: auto;
+}
+.btn {
+  all: unset;
+}
+li {
+  list-style: none;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ----header---- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.1rem;
+}
+.logo {
+  color: var(--white);
+  font-size: 1.625rem;
+}
+.switch-btn {
+  display: flex;
+  gap: 0.938rem;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--white);
+}
+/* ----search---- */
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.563rem;
+  border-radius: 0.938rem;
+  gap: 1.25rem;
+  background-color: var(--dark-blue-200);
+  margin-bottom: 2.1rem;
+}
+.search-icon-input {
+  display: flex;
+  align-items: center;
+  gap: 0.563rem;
+  width: 100%;
+}
+input {
+  height: 3.125rem;
+  font-size: 0.8rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--white);
+  width: 100%;
+}
+input::placeholder {
+  font-family: "Space Mono", monospace;
+  color: var(--white);
+}
+.search-btn {
+  background-color: var(--blue);
+  max-width: 5rem;
+  width: 100%;
+  border: none;
+  color: var(--white);
+  font-size: inherit;
+  font-family: inherit;
+  text-transform: capitalize;
+  border-radius: 10px;
+}
+/* ----result---- */
+.result {
+  display: grid;
+  grid-template-columns: 4.375rem 1fr;
+  grid-template-areas:
+    "avatar person"
+    "bio bio"
+    "statistic statistic"
+    "social social";
+  border-radius: 0.938rem;
+  padding: 1rem;
+  background-color: var(--dark-blue-200);
+}
+
+.user-image {
+  border-radius: 50%;
+  height: 4.375rem;
+  width: 4.375rem;
+  grid-area: avatar;
+  margin-bottom: 3rem;
+}
+.result-bio {
+  grid-area: bio;
+  margin-bottom: 1.5625rem;
+  color: var(--white);
+  font-size: 0.813rem;
+}
+
+.user-personal-info {
+  grid-area: person;
+  padding-left: 1.25rem;
+
+  margin-bottom: 1.5625rem;
+  color: var(--white);
+  text-transform: capitalize;
+}
+.user-name {
+  font-size: 1rem;
+}
+.user-name-link {
+  font-size: 0.813rem;
+  color: var(--blue);
+  text-transform: lowercase;
+}
+.result-join-date {
+  font-size: 0.813rem;
+}
+.repos-followers-following {
+  background-color: var(--very-dark-blue-300);
+  margin-bottom: 1.5625rem;
+  grid-area: statistic;
+  display: flex;
+  justify-content: space-around;
+  color: var(--white);
+  text-transform: capitalize;
+  padding: 0.98rem;
+  border-radius: 0.625rem;
+}
+.repos-followers-following li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.repos-followers-following li span:first-child {
+  font-size: 0.813rem;
+}
+.repos-followers-following li span:last-child {
+  font-size: 1.375rem;
+  font-weight: bold;
+}
+
+.social-media-links {
+  display: grid;
+  gap: 1.5rem;
+  grid-area: social;
+  color: var(--white);
+  font-size: 0.938rem;
+}
+.social-media-links > li {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-media-links > li a {
+  text-decoration: none;
+  color: var(--light-blue);
+}
+.social-media-links > li a.active {
+  color: var(--white);
+}
+
+/* ---------Large Screen-------------- */
+
+/* Medium */
+@media (min-width: 992px) {
+  /* ----Search---- */
+  .search-icon-input {
+    gap: 1.563rem;
+  }
+  .search-btn {
+    max-width: 6.635rem;
+  }
+  input {
+    font-size: 1rem;
+  }
+
+  .search-icon {
+    margin-left: 20px;
+  }
+  .result-join-date {
+    margin-top: 0.66rem;
+  }
+  /* ----result---- */
+  .result {
+    grid-template-columns: 7.313rem 1fr;
+    grid-template-areas:
+      "avatar person"
+      "bio bio"
+      "statistic statistic"
+      "social social";
+    padding: 2.25rem;
+  }
+  .user-image {
+    width: 7.313rem;
+    height: 7.313rem;
+    grid-area: avatar;
+    margin-bottom: 0rem;
+  }
+  .result-bio {
+    margin-top: 1.5625rem;
+  }
+  .user-name {
+    font-size: 1.625rem;
+  }
+  .user-name-link {
+    font-size: 0.938rem;
+  }
+  .result-join-date {
+    font-size: 0.938rem;
+  }
+
+  .social-media-links {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  /* ----result---- */
+  .result {
+    grid-template-columns: 7.313rem 1fr;
+    grid-template-areas:
+      "avatar person"
+      ". bio"
+      ". statistic"
+      ". social";
+    padding: 2.25rem;
+  }
+
+  .user-image {
+    width: 7.313rem;
+    height: 7.313rem;
+    grid-area: avatar;
+    margin-bottom: 0rem;
+  }
+  .result-bio {
+    margin-top: -1.5625rem;
+    padding-left: 2.25rem;
+  }
+
+  .user-personal-info {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2.25rem;
+    margin: 0;
+  }
+  .user-name {
+    font-size: 1.625rem;
+  }
+  .user-name-link {
+    font-size: 0.938rem;
+    color: var(--blue);
+    text-transform: lowercase;
+  }
+  .result-join-date {
+    font-size: 0.938rem;
+  }
+
+  .repos-followers-following {
+    margin-left: 2.25rem;
+    grid-area: statistic;
+  }
+
+  .social-media-links {
+    padding-left: 2.25rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}

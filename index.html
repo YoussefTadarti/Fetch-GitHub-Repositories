@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub User Search App | YoussefTadarti</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="logo">devfinder</h1>
+        <button class="btn switch-btn">
+          <span>light</span>
+          <img src="assets/svg/icon-moon.svg" alt="icon-moon" />
+        </button>
+      </header>
+
+      <main>
+        <form class="search-form">
+          <div class="search-icon-input">
+            <img class="search-icon" src="assets/svg/icon-search.svg" alt="" />
+            <input type="text" placeholder="Search GitHub username..." />
+          </div>
+          <button class="search-btn" type="submit">search</button>
+        </form>
+        <div class="result">
+          <img class="user-image" src="assets/images/octocat.jpg" alt="" />
+          <div class="user-personal-info">
+            <div class="result-names">
+              <h2 class="user-name">the octocat</h2>
+              <a class="user-name-link" href="https://github.com/octocat"
+                >@octocat</a
+              >
+            </div>
+            <p class="result-join-date">joined <time> 25 jan 2011</time></p>
+          </div>
+
+          <p class="result-bio">This profile has no bio</p>
+          <ul class="repos-followers-following">
+            <li><span>repos</span> <span>8</span></li>
+            <li><span>followers</span> <span>3938</span></li>
+            <li><span>following</span> <span>9</span></li>
+          </ul>
+
+          <ul class="social-media-links">
+            <li>
+              <img src="assets/svg/icon-location.svg" />
+              <span class="sr-only">Location: </span>
+              <span>San Francisco</span>
+            </li>
+
+            <li>
+              <img src="assets/svg/icon-twitter.svg" />
+              <span class="sr-only">Twitter: </span>
+              <a href="https://github.blog">Not Available</a>
+            </li>
+
+            <li>
+              <img src="assets/svg/icon-website.svg" />
+              <span class="sr-only">website: </span>
+              <a href="https://github.blog" class="active"
+                >https://github.blog</a
+              >
+            </li>
+
+            <li>
+              <img src="assets/svg/icon-company.svg" />
+              <span class="sr-only">Office: </span>
+              <a href="https://github.com/github" class="active">@github</a>
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
