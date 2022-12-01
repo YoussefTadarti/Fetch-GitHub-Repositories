@@ -20,23 +20,6 @@ body {
   --very-dark-blue-300: hsl(220deg 40% 13%);
   --very-light-blue: hsl(227deg 100% 98%);
   --white: hsl(0deg 0% 100%);
-  --primary-transition: 250ms ease-in-out;
-  --container-max-width: clamp(21.88rem, calc(6.39rem + 66.09vw), 45.63rem);
-  --body-padding: clamp(1.5rem, calc(0.03rem + 6.26vw), 3.75rem);
-  --landmark-font-size: clamp(0.81rem, calc(0.6rem + 0.89vw), 0.94rem);
-  --header-logo-color: var(--very-dark-blue-200);
-  --link-color: var(--dark-blue-100);
-  --body-background-color: var(--very-light-blue);
-  --body-font-color: var(--dark-blue-100);
-  --result-background-color: var(--white);
-  --result-name-color: var(--very-dark-blue-100);
-  --result-statistic-background-color: var(--very-light-blue);
-  --result-number-color: var(--very-dark-blue-100);
-  --theme-switcher-text-hover-color: var(--very-dark-blue-200);
-  --search-form-input-background-color: var(--white);
-  --search-form-input-color: var(--very-dark-blue-200);
-  --focus-visible-outline-color: var(--very-dark-blue-300);
-  --primary-box-shadow: 0 1rem 1.875rem -0.625rem rgb(70 96 187 / 20%);
 }
 
 .container {
@@ -155,7 +138,6 @@ input::placeholder {
 .user-personal-info {
   grid-area: person;
   padding-left: 1.25rem;
-
   margin-bottom: 1.5625rem;
   color: var(--white);
   text-transform: capitalize;
@@ -251,7 +233,6 @@ input::placeholder {
   .user-image {
     width: 7.313rem;
     height: 7.313rem;
-    grid-area: avatar;
     margin-bottom: 0rem;
   }
   .result-bio {
@@ -287,7 +268,6 @@ input::placeholder {
   .user-image {
     width: 7.313rem;
     height: 7.313rem;
-    grid-area: avatar;
     margin-bottom: 0rem;
   }
   .result-bio {
@@ -305,11 +285,11 @@ input::placeholder {
     font-size: 1.625rem;
   }
   .user-name-link {
-    font-size: 0.938rem;
     color: var(--blue);
     text-transform: lowercase;
   }
-  .result-join-date {
+  .result-join-date,
+  .user-name-link {
     font-size: 0.938rem;
   }
 
