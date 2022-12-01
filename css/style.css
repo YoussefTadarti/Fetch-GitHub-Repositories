@@ -11,8 +11,9 @@ body {
   background-color: var(--very-dark-blue-300);
 }
 :root {
-  --blue: hsl(212deg 100% 50%);
-  --light-blue: hsl(217deg 20% 51%);
+  --blue: hsl(212deg 100% 36%);
+  --blue-100: hsl(212deg 100% 69%);
+  --light-blue: hsl(201deg 20% 66%);
   --dark-blue-100: hsl(217deg 35% 45%);
   --dark-blue-200: hsl(222deg 41% 20%);
   --very-dark-blue-100: hsl(217deg 21% 21%);
@@ -147,7 +148,7 @@ input::placeholder {
 }
 .user-name-link {
   font-size: 0.813rem;
-  color: var(--blue);
+  color: var(--blue-100);
   text-transform: lowercase;
 }
 .result-join-date {
