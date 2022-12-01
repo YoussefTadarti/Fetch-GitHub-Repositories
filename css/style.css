@@ -61,7 +61,10 @@ li {
   white-space: nowrap;
   border-width: 0;
 }
-
+.icon {
+  height: "18";
+  width: "20";
+}
 /* ----header---- */
 .header {
   display: flex;
