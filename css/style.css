@@ -285,10 +285,7 @@ input::placeholder {
   .user-name {
     font-size: 1.625rem;
   }
-  .user-name-link {
-    color: var(--blue);
-    text-transform: lowercase;
-  }
+
   .result-join-date,
   .user-name-link {
     font-size: 0.938rem;
@@ -296,11 +293,9 @@ input::placeholder {
 
   .repos-followers-following {
     margin-left: 2.25rem;
-    grid-area: statistic;
   }
 
   .social-media-links {
     padding-left: 2.25rem;
-    grid-template-columns: 1fr 1fr;
   }
 }
