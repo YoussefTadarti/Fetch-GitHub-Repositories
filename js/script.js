@@ -12,14 +12,14 @@ switchBtn.addEventListener("click", () => {
 function enableLightMode() {
   window.localStorage.setItem("theme", "light");
   switchBtn.firstElementChild.textContent = "dark";
-  switchBtn.lastElementChild.src = "../assets/svg/icon-moon.svg";
+  switchBtn.lastElementChild.src = "assets/svg/icon-moon.svg";
   document.body.classList.add("light-mode");
   document.body.style = "transition : background 0.3s; ";
 }
 function enableDarkMode() {
   window.localStorage.setItem("theme", "dark");
   switchBtn.firstElementChild.textContent = "light";
-  switchBtn.lastElementChild.src = "../assets/svg/icon-sun.svg";
+  switchBtn.lastElementChild.src = "assets/svg/icon-sun.svg";
   document.body.classList.remove("light-mode");
   document.body.style = "transition : background 0.3s;";
 }
