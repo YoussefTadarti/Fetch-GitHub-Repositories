@@ -30,7 +30,6 @@ body {
   --very-dark-blue-300: hsl(227, 100%, 98%);
   --dark-blue-200: hsl(0, 0%, 100%);
   --error: hsl(0, 92%, 62%);
-  /* transition: background 0.3s; */
 }
 
 .container {
@@ -82,6 +81,7 @@ li {
 .switch-btn-annimation {
   animation: switch-animation 0.3s;
 }
+
 /* ----search---- */
 .search-form {
   display: flex;
@@ -208,14 +208,26 @@ input::placeholder {
   justify-content: start;
   align-items: center;
   gap: 1rem;
+  cursor: no-drop;
+}
+.social-media-links > li.active {
+  cursor: pointer;
 }
 
 .social-media-links > li a {
   text-decoration: none;
   color: var(--light-blue);
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  cursor: no-drop;
 }
-.social-media-links > li a.active {
+.website {
+  word-wrap: nowrap;
+  width: 15rem;
+}
+.social-media-links > li.active a {
   color: var(--white);
+  cursor: pointer;
 }
 
 /* ---------Large Screen-------------- */
