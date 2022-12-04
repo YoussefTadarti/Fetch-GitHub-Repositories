@@ -208,7 +208,7 @@ input::placeholder {
   justify-content: start;
   align-items: center;
   gap: 1rem;
-  cursor: no-drop;
+  cursor: text;
 }
 .social-media-links > li.active {
   cursor: pointer;
@@ -219,15 +219,24 @@ input::placeholder {
   color: var(--light-blue);
   overflow-x: hidden;
   text-overflow: ellipsis;
-  cursor: no-drop;
+  cursor: text;
 }
 .website {
   word-wrap: nowrap;
   width: 15rem;
 }
-.social-media-links > li.active a {
+.social-media-links > li.active a,
+.social-media-links > li.active span {
   color: var(--white);
   cursor: pointer;
+}
+.social-media-links > li.active span,
+.social-media-links > li.active> .location-img {
+  cursor: text;
+}
+
+.social-media-links > li .location {
+  color: #97adb9;
 }
 
 /* ---------Large Screen-------------- */

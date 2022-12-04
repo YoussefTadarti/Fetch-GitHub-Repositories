@@ -39,27 +39,29 @@
           <div class="user-personal-info">
             <div class="result-names">
               <h2 class="user-name">the octocat</h2>
-              <a class="user-name-link" href="" target="_blank"></a>
+              <a class="user-name-link" href="https://github.com/octocat"
+                >@octocat</a
+              >
             </div>
-            <p class="result-join-date"></p>
+            <p class="result-join-date">joined <time> 25 jan 2011</time></p>
           </div>
 
           <p class="result-bio"></p>
           <ul class="repos-followers-following">
-            <li><span>repos</span> <span data-repos></span></li>
-            <li><span>followers</span> <span data-followers></span></li>
-            <li><span>following</span> <span data-following></span></li>
+            <li><span>repos</span> <span data-repos>8</span></li>
+            <li><span>followers</span> <span data-followers>3938</span></li>
+            <li><span>following</span> <span data-following>9</span></li>
           </ul>
 
           <ul class="social-media-links">
-            <li>
+            <li class="active">
               <img
-                id="lacation-svg"
-                class="icon"
+                class="icon location-img"
                 src="assets/svg/icon-location.svg"
                 alt="location"
               />
-              <a data-location target="_blank"></a>
+              <span data-location class="location">San Francisco</span>
+              <!-- <a data-location target="_blank">San Francisco</a> -->
               <span class="sr-only">Location: </span>
             </li>
 
@@ -70,29 +72,37 @@
                 src="assets/svg/icon-twitter.svg"
                 alt="twitter"
               />
-              <a data-twitter target="_blank"></a>
+              <a data-twitter href="#" target="_blank">Not Available</a>
               <span class="sr-only">Twitter: </span>
             </li>
 
-            <li>
+            <li class="active">
               <img
                 id="website-svg"
                 class="icon"
                 src="assets/svg/icon-website.svg"
                 alt="website"
               />
-              <a class="website" data-website target="_blank"></a>
+              <a
+                class="website"
+                data-website
+                href="https://github.blog"
+                target="_blank"
+                >https://github.blog</a
+              >
               <span class="sr-only">website: </span>
             </li>
 
-            <li>
+            <li class="active">
               <img
                 id="company-svg"
                 class="icon"
                 src="assets/svg/icon-company.svg"
                 alt="office"
               />
-              <a data-office target="_blank"></a>
+              <a data-office target="_blank" href="https://github.com/github"
+                >@github</a
+              >
               <span class="sr-only">Office: </span>
             </li>
           </ul>

@@ -3,7 +3,7 @@ let switchBtn = document.querySelector(".switch-btn");
 let theme = window.localStorage.getItem("theme");
 
 theme === "light" ? enableLightMode() : enableDarkMode();
-// switchBtn.style = `transform: translateY(${0}rem)`;
+
 switchBtn.addEventListener("click", () => {
   switchBtn.classList.add("switch-btn-annimation");
 
@@ -31,7 +31,12 @@ function enableDarkMode() {
   }, 300);
 }
 //---------Search user------------//
+
 let searchForm = document.querySelector(".search-form");
+
+if (localStorage.getItem("userData")) {
+  getUserFromLocalStorage();
+}
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   let inputValue = document.querySelector("#username");
@@ -46,9 +51,11 @@ searchForm.addEventListener("submit", (e) => {
         reposFollowersFollowing(user);
         socialMediaLinks(user);
         userImage(user);
+        addUserToLocalStorage(user);
       });
   }
 });
+
 function userPersonalInfo(user) {
   let fullName = document.querySelector(".user-name");
   let userNameLink = document.querySelector(".user-name-link");
@@ -85,12 +92,11 @@ function socialMediaLinks(user) {
   let twitter = document.querySelector("[data-twitter]");
   let website = document.querySelector("[data-website]");
   let office = document.querySelector("[data-office]");
-
   if (user.location === null) {
     location.parentElement.classList.remove("active");
     location.previousElementSibling.style =
       "filter: brightness(0) saturate(100%) invert(91%) sepia(3%) saturate(2868%) hue-rotate(172deg) brightness(77%) contrast(84%);";
-    location.textContent = `Not Available`;
+    location.innerHTML = `Not Available`;
     location.href = `#`;
   } else {
     location.previousElementSibling.style =
@@ -103,7 +109,7 @@ function socialMediaLinks(user) {
     twitter.parentElement.classList.remove("active");
     twitter.previousElementSibling.style =
       "filter: brightness(0) saturate(100%) invert(91%) sepia(3%) saturate(2868%) hue-rotate(172deg) brightness(77%) contrast(84%);";
-    twitter.textContent = `Not Available`;
+    twitter.innerHTML = `<span>Not Available</span>`;
     twitter.href = `#`;
   } else {
     twitter.previousElementSibling.style =
@@ -126,7 +132,7 @@ function socialMediaLinks(user) {
     website.href = `${user.blog}`;
     website.textContent = `${user.blog}`;
   }
-  console.log(office.previousElementSibling.src);
+
   if (user.company === null) {
     office.parentElement.classList.remove("active");
     office.previousElementSibling.style =
@@ -138,11 +144,65 @@ function socialMediaLinks(user) {
       "filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(1%) hue-rotate(288deg) brightness(103%) contrast(102%);";
     office.parentElement.classList.add("active");
     office.href = `${user.blog}`;
-    office.textContent = `@${user.company}`;
+    office.textContent = `${user.company}`;
   }
 }
 
 function userImage(user) {
   let userImage = document.querySelector(".user-image");
   userImage.src = `${user.avatar_url}`;
+}
+
+// ----- localStorage ----- //
+function addUserToLocalStorage(user) {
+  const userData = {
+    name: user.name,
+    login: `${user.login}`,
+    created_at: `${user.created_at}`,
+    bio: user.bio,
+    public_repos: `${user.public_repos}`,
+    followers: `${user.followers}`,
+    following: `${user.following}`,
+    location: `${user.location}`,
+    twitter_username: `${user.twitter_username}`,
+    blog: `${user.blog}`,
+    company: `${user.company}`,
+    avatar_url: `${user.avatar_url}`,
+  };
+
+  window.localStorage.setItem("userData", JSON.stringify(userData));
+}
+
+function getUserFromLocalStorage() {
+  let user = localStorage.getItem("userData");
+  let location = document.querySelector("[data-location]");
+  let twitter = document.querySelector("[data-twitter]");
+  let website = document.querySelector("[data-website]");
+  let office = document.querySelector("[data-office]");
+  if (user) {
+    jsonData = JSON.parse(user);
+    userPersonalInfo(jsonData);
+    resultBio(jsonData);
+    reposFollowersFollowing(jsonData);
+    socialMediaLinks(jsonData);
+    checkSocialMediaLinks(jsonData, location);
+    checkSocialMediaLinks(jsonData, twitter);
+    checkSocialMediaLinks(jsonData, office);
+    userImage(jsonData);
+  }
+}
+
+function checkSocialMediaLinks(data, scialMedia) {
+  if (data.location === "null") {
+    scialMedia.parentElement.classList.remove("active");
+    scialMedia.previousElementSibling.style =
+      "filter: brightness(0) saturate(100%) invert(91%) sepia(3%) saturate(2868%) hue-rotate(172deg) brightness(77%) contrast(84%);";
+    scialMedia.textContent = `Not Available`;
+    scialMedia.href = `#`;
+  } else {
+    scialMedia.previousElementSibling.style =
+      "filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(1%) hue-rotate(288deg) brightness(103%) contrast(102%);";
+    scialMedia.textContent = `${data.location}`;
+    scialMedia.parentElement.classList.add("active");
+  }
 }
